@@ -12,6 +12,8 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     rack (1.5.2)
+    rack-mount (0.8.3)
+      rack (>= 1.0.0)
     rack-protection (1.5.3)
       rack
     rb-fsevent (0.9.4)
@@ -39,6 +41,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rack-mount
   rerun
   sinatra
   slim
