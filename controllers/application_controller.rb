@@ -1,9 +1,10 @@
 class ApplicationController < Sinatra::Base
-  include ApplicationHelper
+  helpers ApplicationHelper
+
+  enable :sessions, :method_override
 
   set :views, File.expand_path('../../views', __FILE__)
 
-  # TODO: не срабатывает этот метод когда нужный роут не найден
   not_found do
     title 'Not Found!'
     view :not_found
