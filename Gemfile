@@ -9,8 +9,13 @@ gem "thin"
 gem 'slim'
 
 # auto-reload then changes app https://github.com/alexch/rerun
-# then server must run this command: bundle exec rerun -- thin start --port=4567 -R config.ru
+# then server must run this command:
+# bundle exec rerun -- thin start --port=4567 -R config.ru
 gem 'rerun'
 
 # Routing
 gem 'rack-mount'
+
+# DataBase
+gem 'mongoid'
+gem 'bson_ext'

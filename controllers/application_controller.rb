@@ -5,6 +5,11 @@ class ApplicationController < Sinatra::Base
 
   set :views, File.expand_path('../../views', __FILE__)
 
+  # Mongo config
+  configure do
+    Mongoid.load!(File.expand_path('../config/mongoid.yml', File.dirname(__FILE__)))
+  end
+
   not_found do
     title 'Not Found!'
     view :not_found

@@ -3,6 +3,9 @@ require 'bundler'
 require 'sinatra/base'
 require 'rack/mount'
 
+require 'bson'
+require 'mongoid'
+
 Bundler.require
 
 Dir.glob('./{helpers,controllers,models}/*.rb').each{|file| require file}
