@@ -1,1 +1,3 @@
 p This is a posts/index.slim
+- Post.each do |post|
+  a href="/posts/#{post._id}"= post.title

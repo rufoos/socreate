@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   get '/posts/:id' do
+    @post = Post.find(params[:id])
     view :'/posts/show'
   end
 end

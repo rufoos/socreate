@@ -7,7 +7,8 @@ class ApplicationController < Sinatra::Base
 
   # Mongo config
   configure do
-    Mongoid.load!(File.expand_path('../config/mongoid.yml', File.dirname(__FILE__)))
+    mongo_config = File.expand_path('../config/mongoid.yml', File.dirname(__FILE__))
+    Mongoid.load!(mongo_config)
   end
 
   not_found do
