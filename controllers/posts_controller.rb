@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   post '/posts' do
-    @post = Post.create(params[:post])
+    @post = Post.create!(params[:post])
+    view :'/posts/show'
   end
 end
