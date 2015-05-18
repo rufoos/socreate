@@ -1,0 +1,8 @@
+form action="/posts/update" method="POST"
+  .form-group
+    label for="post_title" Заголовок
+    input type="text" name="post[title]" id="post_title" value="#{@post.title}"
+  .form-group
+    label for="post_content" Описание
+    textarea name="post[content]" id="post_content"= @post.content
+  button type="submit" Создать
