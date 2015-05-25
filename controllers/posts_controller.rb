@@ -1,7 +1,4 @@
 class PostsController < ApplicationController
-  before '/posts/\w+/?(edit|update|)' do
-    set_post
-  end
 
   get '/posts' do
     title 'Posts'
@@ -13,10 +10,12 @@ class PostsController < ApplicationController
   end
 
   get '/posts/:id' do
+    @post = Post.find(params[:id])
     view :'/posts/show'
   end
 
   get '/posts/:id/edit' do
+    @post = Post.find(params[:id])
     view :'/posts/edit'
   end
 
@@ -26,13 +25,9 @@ class PostsController < ApplicationController
   end
 
   post '/posts/:id/update' do
-    @post.update_attributes(params[:post])
-    view :'/posts/show'
-  end
-
-  private
-
-  def set_post
     @post = Post.find(params[:id])
+    @post.update_attributes(params[:post])
+    redirect to("/posts/#{@post.id}")
   end
+
 end

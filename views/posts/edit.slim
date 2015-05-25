@@ -1,4 +1,4 @@
-form action="/posts/update" method="POST"
+form action="/posts/#{@post.id}/update" method="POST"
   .form-group
     label for="post_title" Заголовок
     input type="text" name="post[title]" id="post_title" value="#{@post.title}"
