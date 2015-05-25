@@ -5,6 +5,7 @@ require 'rack/mount'
 
 require 'bson'
 require 'mongoid'
+require 'genghis'
 
 Bundler.require
 
@@ -17,4 +18,5 @@ Routes = Rack::Mount::RouteSet.new do |set|
   set.add_route PostsController, { request_method: 'POST', path_info: %r{^/posts/create$} }, {}, :posts
   set.add_route PostsController, { request_method: 'POST', path_info: %r{^/posts/\w+/update$} }, {}, :posts
   set.add_route PostsController, { request_method: 'GET', path_info: %r{^/posts.*$} }, {}, :posts
+  set.add_route Genghis::Server.new, { request_method: 'GET', path_info: %r{^/genghis} }, {}, :genghis
 end

@@ -19,3 +19,4 @@ gem 'rack-mount'
 # DataBase
 gem 'mongoid'
 gem 'bson_ext'
+gem 'genghisapp'
