@@ -1,5 +1,6 @@
 class ApplicationController < Sinatra::Base
   helpers ApplicationHelper
+  register Sinatra::AssetPack
 
   enable :sessions, :method_override
 
@@ -14,6 +15,10 @@ class ApplicationController < Sinatra::Base
   not_found do
     title 'Not Found!'
     view :not_found
+  end
+
+  assets do
+    # TODO
   end
 
   def view(template)

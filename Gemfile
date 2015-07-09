@@ -20,3 +20,6 @@ gem 'rack-mount'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'genghisapp'
+
+# assets
+gem 'sinatra-assetpack'
